@@ -33,6 +33,16 @@
     a { color: var(--primary-color); text-decoration: none; transition: color 0.3s ease; }
     a:hover { color: darken(var(--primary-color), 10%); text-decoration: underline; }
 
+    .logo {
+        max-width: 35px; /* Asegura que no exceda el ancho del modal */
+        max-height: 80vh; /* Limita la altura máxima (80% de la altura visible) */
+        object-fit: contain; /* Muestra la imagen completa, manteniendo proporción */
+      
+        margin: auto; /* Centra horizontalmente */
+    }
+
+
+
     .section-padding { padding: 80px 0; }
     .section-bg { background-color: var(--light-color); }
     .text-primary { color: var(--primary-color) !important; }
