@@ -1,1 +1,671 @@
 
+/*--------------------------------------------------------------
+    # Estilos Generales y Variables de Color
+    --------------------------------------------------------------*/
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --accent-color: #ffc107;
+    --text-color: #333;
+    --text-light: #f8f9fa;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Titillium Web', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    line-height: 1.7;
+    padding-top: 70px;
+    /* Ajusta por navbar fija */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: darken(var(--primary-color), 10%);
+    text-decoration: underline;
+}
+
+.logo {
+    max-width: 35px;
+    /* Asegura que no exceda el ancho del modal */
+    max-height: 80vh;
+    /* Limita la altura máxima (80% de la altura visible) */
+    object-fit: contain;
+    /* Muestra la imagen completa, manteniendo proporción */
+
+    margin: auto;
+    /* Centra horizontalmente */
+}
+
+
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-bg {
+    background-color: var(--light-color);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-dark {
+    background-color: var(--dark-color) !important;
+}
+
+.linea {
+    width: 100px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 20px auto;
+}
+
+
+/*--------------------------------------------------------------
+    # Navbar
+    --------------------------------------------------------------*/
+.navbar {
+    background-color: rgba(33, 37, 41, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-light) !important;
+}
+
+.navbar-brand .fa-robot {
+    color: var(--accent-color);
+    margin-right: 8px;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--text-light) !important;
+}
+
+/*--------------------------------------------------------------
+    # Hero Section
+    --------------------------------------------------------------*/
+#hero {
+    background: url('https://images.squarespace-cdn.com/content/v1/5d0c74548c8e8f0001be73ba/1625093768220-DXWZPDITT3RA2Q77VPOF/Rredes+neuronales+grafos.gif') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: var(--text-light);
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h1 {
+    color: var(--text-light);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#hero h1 span {
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+#hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+#hero .btn-hero {
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#hero .btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------------------------------------------------------
+    # Sección Compromiso O&M
+    --------------------------------------------------------------*/
+#compromiso .icon-box {
+    text-align: center;
+    padding: 30px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+#compromiso .icon-box:hover {
+    transform: translateY(-10px);
+}
+
+#compromiso .icon-box i {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+#compromiso .icon-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+#compromiso .icon-box p {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+/*--------------------------------------------------------------
+    # Sección Tecnologías Destacadas
+    --------------------------------------------------------------*/
+#tecnologias .card {
+    border: none;
+}
+
+#tecnologias .card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/*--------------------------------------------------------------
+    # Sección Galería
+    --------------------------------------------------------------*/
+#galeria .galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#galeria .galeria-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+#galeria .galeria-item:hover img {
+    transform: scale(1.1);
+}
+
+#galeria .galeria-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 118, 192, 0.85), rgba(0, 118, 192, 0));
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+}
+
+#galeria .galeria-item:hover .galeria-overlay {
+    height: 100%;
+    opacity: 1;
+    /* Cursor pointer se añade en el div ahora */
+}
+
+#galeria .galeria-overlay h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 15px;
+}
+
+/*--------------------------------------------------------------
+    # Estilos para Modal de Galería (NUEVO)
+    --------------------------------------------------------------*/
+#imageModal .modal-content {
+    background-color: rgba(10, 10, 10, 0.9);
+    /* Fondo semi-transparente oscuro */
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#imageModal .modal-header {
+    border-bottom: 1px solid #444;
+    /* Línea sutil */
+}
+
+#modalImage {
+    max-width: 100%;
+    /* Asegura que no exceda el ancho del modal */
+    max-height: 80vh;
+    /* Limita la altura máxima (80% de la altura visible) */
+    object-fit: contain;
+    /* Muestra la imagen completa, manteniendo proporción */
+    display: block;
+    margin: auto;
+    /* Centra horizontalmente */
+}
+
+/*--------------------------------------------------------------
+    # Sección Videos
+    --------------------------------------------------------------*/
+#videos .video-container {
+    background: var(--dark-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#videos .main-video-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#videos .main-video {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+#videos .video-list {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+#videos .video-list video {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+#videos .video-list video:last-child {
+    margin-right: 0;
+}
+
+#videos .video-list video:hover {
+    transform: scale(1.05);
+}
+
+#videos .video-list video.active {
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+@media (min-width: 992px) {
+    #videos .video-container {
+        flex-direction: row;
+    }
+
+    #videos .main-video-wrapper {
+        width: 75%;
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    #videos .video-list {
+        width: 25%;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 450px;
+        padding-bottom: 0;
+    }
+
+    #videos .video-list video {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #videos .video-list video:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/*--------------------------------------------------------------
+    # Sección Canales YouTube (CARRUSEL SWIPER)
+    --------------------------------------------------------------*/
+#youtube-channels .channel-card {
+    /* Estilo para la tarjeta dentro del carrusel */
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#youtube-channels .channel-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#youtube-channels .channel-logo {
+    /* Estilo para el logo */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--light-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px auto 10px auto;
+    /* Centrado */
+    display: block;
+}
+
+#youtube-channels .card-body {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+#youtube-channels .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+#youtube-channels .card-text {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+#youtube-channels .btn-youtube {
+    /* Estilo Botón Rojo YouTube */
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: white;
+    margin-top: auto;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+#youtube-channels .btn-youtube:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+/* Estilos para Swiper */
+.youtube-swiper .swiper-pagination-bullet {
+    background-color: var(--secondary-color);
+    opacity: 0.7;
+}
+
+.youtube-swiper .swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+.youtube-swiper .swiper-slide {
+    height: auto;
+    padding-bottom: 40px;
+    /* Espacio extra abajo para paginación */
+}
+
+/*--------------------------------------------------------------
+    # Sección Call to Action (CTA)
+    --------------------------------------------------------------*/
+#cta {
+    background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(13, 110, 253, 0.9));
+    padding: 100px 0;
+    color: var(--text-light);
+    text-align: center;
+}
+
+#cta h2 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#cta p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+#cta .btn-cta {
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--dark-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#cta .btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: darken(var(--accent-color), 10%);
+    color: var(--dark-color);
+}
+
+/*--------------------------------------------------------------
+    # Footer
+    --------------------------------------------------------------*/
+#footer {
+    background: var(--dark-color);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 30px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#footer a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#footer a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+#footer .social-links a {
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+
+.profile-card {
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #ffc107;
+}
+
+p {
+    font-size: 20px;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 35px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    margin: 10px;
+    font-size: 24px;
+    color: #333;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+/* Estilos para las imágenes del carrusel */
+.carousel-img {
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor .carousel-item */
+    height: 600px; /* Define una altura FIJA para todas las imágenes. AJUSTA ESTE VALOR según necesites. 800px puede ser muy alto. */
+    object-fit: contain; /* Escala la imagen manteniendo la proporción para que quepa COMPLETAMENTE dentro del cuadro (width 100% y height fijo). NO hay recorte ni distorsión. */
+    object-position: center; /* Centra la imagen dentro del cuadro si su proporción no coincide exactamente */
+    /* display: block; es agregado por d-block de Bootstrap */
+    /* margin: auto; no es necesario aquí porque width: 100% y object-fit/position manejan el ajuste */
+    background-color: #f8f9fa; /* Opcional: Un color de fondo suave si quedan espacios vacíos por object-fit: contain */
+}
+
+/* Asegurar que los items del carrusel permitan contener la altura de la imagen */
+.carousel-item {
+    /* Opcional: Podrías añadir una transición suave aquí si las alturas varían mucho, pero con altura fija en la imagen, no debería ser necesario */
+    /* transition: opacity .6s ease-in-out, height .6s ease-in-out; */
+    background-color: #f8f9fa; /* Coincide con el fondo de la imagen por si acaso */
+}
+
+/* Estilos para las flechas (tus estilos están bien, solo ajusto el color) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 50px;  /* Ligeramente más pequeño que 60px */
+    height: 50px;
+    background-color: rgba(220, 53, 69, 0.8); /* Rojo semitransparente (DC3545 es el rojo de Bootstrap 'danger') */
+    background-size: 100%, 100%; /* Asegura que el icono SVG interno se vea bien */
+    border-radius: 50%;
+    padding: 10px; /* Añade un poco de padding interno si es necesario */
+}
+
+/* Sombra en las flechas (tu estilo está bien) */
+.carousel-control-prev,
+.carousel-control-next {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+.linea {
+    width: 80px; /* O el ancho que prefieras */
+    height: 4px;
+    background-color: #0d6efd; /* O el color principal de tu sitio (ej: azul de Bootstrap) */
+    margin: 15px auto 0; /* Centra la línea y le da espacio arriba */
+    border-radius: 2px;
+}
+/* Opcional: Estilo para el span dentro del h2 */
+.text-center h2 span {
+   color: #0d6efd; /* O tu color de énfasis */
+   /* font-weight: bold;  Si quieres que sea negrita */
+}
+
+  /* Estilo opcional para que el iframe sea responsivo */
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* Fondo negro mientras carga */
+    margin-bottom: 20px; /* Espacio debajo del video */
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Sin borde feo */
+}
